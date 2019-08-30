@@ -30,7 +30,7 @@ function global_val($key) {
     $a = array();
     $a["servername"] = "db"; //mysql servername
     $a["username"] = "root"; //mysql username
-    $a["password"] = "123132123"; //mysql password
+    $a["password"] = "123456"; //mysql password
     $a["databasename"] = "turtlebot_db"; //mysql database
     if(!array_key_exists($key,$a)) {
         die("global value does not exist [$key]");
