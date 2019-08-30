@@ -1,0 +1,25 @@
+version: '2'
+services:
+
+  php:
+    image: php:apache
+    container_name: lamp_php7_apache
+    restart: always
+    volumes:
+      - ./html/:/var/www/html
+    ports:
+      - 80:80
+
+  db:
+    image: mariadb
+    container_name: lamp_mariadb
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+
+  adminer:
+      image: adminer
+      container_name: lamp_adminer
+      restart: always
+      ports:
+        - "8080:8080"
