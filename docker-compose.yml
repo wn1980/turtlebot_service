@@ -5,6 +5,8 @@ services:
     build: .
     container_name: lamp_php7_apache
     restart: always
+    links:
+     - "db"
     volumes:
       - ./html/:/var/www/html
     ports:
@@ -14,6 +16,8 @@ services:
     image: mariadb
     container_name: lamp_mariadb
     restart: always
+    volumes:
+      - ./db:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=123456
 
