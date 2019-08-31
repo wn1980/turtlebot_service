@@ -5,8 +5,6 @@ services:
     build: .
     container_name: lamp_php7_apache
     restart: always
-    links:
-     - "db"
     volumes:
       - ./html/:/var/www/html
     ports:
