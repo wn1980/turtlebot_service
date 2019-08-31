@@ -13,7 +13,7 @@
  */
 
 
-myDomain = "http://localhost" + window.location.host;
+myDomain = "http://" + window.location.host;
 
 
 if(localStorage['x'] && localStorage['y']){
