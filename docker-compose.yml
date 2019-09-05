@@ -3,6 +3,7 @@ services:
 
   php:
     build: .
+    image: wn1980/web_server
     container_name: lamp_php7_apache
     restart: always
     volumes:
