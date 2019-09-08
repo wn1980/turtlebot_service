@@ -1,11 +1,11 @@
-version: '2'
+version: '3'
 
 services:
 
   php:
     build: .
     image: wn1980/web-server
-    container_name: lamp_php7_apache
+    container_name: lamp_php_apache
     restart: unless-stopped
     volumes:
       - "./html/:/var/www/html:rw"
@@ -21,9 +21,9 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=123456
 
-  adminer:
-      image: adminer
-      container_name: lamp_adminer
-      restart: always
-      ports:
-        - "8080:8080"
+#  adminer:
+#      image: adminer
+#      container_name: lamp_adminer
+#      restart: always
+#      ports:
+#        - "8080:8080"
