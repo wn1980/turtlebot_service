@@ -6,7 +6,7 @@ services:
     build: .
     image: wn1980/web-server
     container_name: lamp_php7_apache
-    restart: always
+    restart: unless-stopped
     volumes:
       - "./html/:/var/www/html:rw"
     ports:
@@ -15,9 +15,9 @@ services:
   db:
     image: mariadb
     container_name: lamp_mariadb
-    restart: always
-    volumes:
-      - "./db:/var/lib/mysql:rw"
+    restart: unless-stopped
+#    volumes:
+#      - "./db:/var/lib/mysql:rw"
     environment:
       - MYSQL_ROOT_PASSWORD=123456
 
